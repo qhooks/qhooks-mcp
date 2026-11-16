@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "qhooks": {
+      "type": "http",
+      "url": "https://qhooks.com/mcp?ref=claude-plugin"
+    }
+  }
+}

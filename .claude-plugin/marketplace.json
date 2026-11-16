@@ -1,0 +1,15 @@
+{
+  "name": "qhooks",
+  "description": "QHooks read and prepare tools for Claude Code.",
+  "owner": {
+    "name": "QHooks",
+    "email": "team@qhooks.com"
+  },
+  "plugins": [
+    {
+      "name": "qhooks",
+      "source": "./",
+      "description": "QHooks token markets, stored QProof checks, perps data and unsigned trade, launch, OTC and agreement plans."
+    }
+  ]
+}

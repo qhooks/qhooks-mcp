@@ -4,6 +4,19 @@ Connect Claude, ChatGPT, Cursor and other MCP clients to QHooks token markets, s
 
 Prepared for the signing wallet: the agent's own wallet or yours. No custody. We never hold keys.
 
+## Claude Code
+
+In Claude Code, run:
+
+```text
+/plugin marketplace add qhooks/qhooks-mcp
+/plugin install qhooks@qhooks
+```
+
+This installs the QHooks skill and the keyless HTTP MCP connection at `https://qhooks.com/mcp?ref=claude-plugin`. Restart Claude Code after installation, or reload plugins if your version supports it. Use `/qhooks:qhooks` for the read-and-prepare guidance. Public reads and unsigned plans do not require a QHooks API key; the signing wallet approves any transaction separately.
+
+QHooks covers eight chains: Robinhood Chain, Base, Arbitrum, BNB Chain, Ethereum, Monad, Elysium and Solana, plus perpetual markets. Tool and execution support varies by chain; launch/Solana site flows and perps venue signing are described by the live catalog and returned plan.
+
 ## Connect
 
 Remote Streamable HTTP URL: `https://qhooks.com/mcp?ref=registry`. Choose **No authentication / No sign in**. Reads and preparation do not require a QHooks API key. A wallet signature is separate from connecting the MCP server. Existing platform account/workspace restrictions apply.
@@ -15,12 +28,12 @@ Remote Streamable HTTP URL: `https://qhooks.com/mcp?ref=registry`. Choose **No a
 
 Try: “Show one recent QHooks launch on Robinhood Chain.” Then: “Read its stored QProof evidence; show missing or stale data.” Read `tools/list` before preparing anything. Transactions, approvals and on-chain fees are disclosed by the actual returned plan and wallet. Quotes, plans, signatures and completed transactions are different states.
 
-Most cached safety/portfolio/discovery/contract/community tools share 10 requests/hour and 30/day per visitor, with a 60/minute site limit; existing market routes may apply separate limits. Honor 429 and Retry-After. Launches/Solana use site flows, perpetual orders use venue signing, and held tools are not available merely because a schema exists.
+Check the live tool catalog and error responses for current availability and limits. Honor 429 and Retry-After; cached reads, fresh upstream work and signed writes can have different limits. Launches/Solana use site flows, perpetual orders use venue signing, and held tools are not available merely because a schema exists.
 
 Support: https://qhooks.com/support · tool contract: https://qhooks.com/skill.md · API: https://qhooks.com/api · privacy: https://qhooks.com/privacy · terms: https://qhooks.com/terms . The support page and tool metadata are live. Directory acceptance is not claimed.
 
 ## Package and ownership
 
-`plugin.json` + `mcp.json` implement the portable Agent Plugins format. `.cursor-plugin/plugin.json` is the Cursor compatibility manifest. No hooks, local commands, credentials, TradingView files or website/vendor source are included. The 512×512 icon is the existing QHooks brand asset. Root mcp.json is the strict portable1.0.0 format (anonymous, no headers). The separate OpenAI edition uses the documented per-server com.openai.auth.type=none extension; the current portable MCP schema does not yet allow that extension. Portal validation remains required for that edition.
+`.claude-plugin/plugin.json` + `.mcp.json` provide the Claude Code plugin; `.claude-plugin/marketplace.json` provides the QHooks marketplace. `plugin.json` + `mcp.json` implement the separate portable Agent Plugins format. `.cursor-plugin/plugin.json` is the Cursor compatibility manifest. No hooks, local commands, credentials, TradingView files or website/vendor source are included. The 512×512 icon is the existing QHooks brand asset. Root mcp.json is the strict portable1.0.0 format (anonymous, no headers). The separate OpenAI edition uses the documented per-server com.openai.auth.type=none extension; the current portable MCP schema does not yet allow that extension. Portal validation remains required for that edition.
 
 Public repository: https://github.com/qhooks/qhooks-mcp . Licensed under [MIT](LICENSE) for the configurations, examples and documentation in this repository only. This does not relicense qhooks.com, its contracts, vendor code or third-party assets, or grant trademark rights. The website privacy policy covers the remote service; this pack has no local telemetry or background tasks.

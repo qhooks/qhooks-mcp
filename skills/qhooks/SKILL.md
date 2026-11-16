@@ -1,5 +1,5 @@
 ---
-name: qhooks-read-prepare
+name: qhooks
 description: Use when the user asks to read QHooks token markets, stored QProof records, public wallet or competition records, or prepare a QHooks trade, launch, OTC deal or agreement.
 ---
 

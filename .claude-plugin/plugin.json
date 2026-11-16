@@ -1,0 +1,20 @@
+{
+  "name": "qhooks",
+  "version": "8.1.0",
+  "description": "QHooks token markets, stored QProof checks, perps data and unsigned trade, launch, OTC and agreement plans.",
+  "author": {
+    "name": "QHooks",
+    "email": "team@qhooks.com"
+  },
+  "homepage": "https://qhooks.com/agents",
+  "repository": "https://github.com/qhooks/qhooks-mcp",
+  "license": "MIT",
+  "keywords": [
+    "qhooks",
+    "robinhood-chain",
+    "token-markets",
+    "qproof",
+    "perps",
+    "unsigned-transactions"
+  ]
+}
