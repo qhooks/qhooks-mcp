@@ -1,0 +1,19 @@
+{
+  "name": "qhooks-mcp",
+  "version": "8.0.1",
+  "description": "Public QHooks token markets, stored QProof records and unsigned wallet plans.",
+  "author": {
+    "name": "QHooks",
+    "email": "team@qhooks.com"
+  },
+  "homepage": "https://qhooks.com/agents?ref=registry",
+  "logo": "assets/icon-512.png",
+  "mcpServers": "mcp.json",
+  "keywords": [
+    "qhooks",
+    "robinhood-chain",
+    "token-safety",
+    "markets",
+    "unsigned-transactions"
+  ]
+}
