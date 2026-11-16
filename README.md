@@ -15,7 +15,9 @@ In Claude Code, run:
 
 This installs the QHooks skill and the keyless HTTP MCP connection at `https://qhooks.com/mcp?ref=claude-plugin`. Restart Claude Code after installation, or reload plugins if your version supports it. Use `/qhooks:qhooks` for the read-and-prepare guidance. Public reads and unsigned plans do not require a QHooks API key; the signing wallet approves any transaction separately.
 
-QHooks covers eight chains: Robinhood Chain, Base, Arbitrum, BNB Chain, Ethereum, Monad, Elysium and Solana, plus perpetual markets. Tool and execution support varies by chain; launch/Solana site flows and perps venue signing are described by the live catalog and returned plan.
+<!-- canonical-chains:start -->
+QHooks covers eight chains: Base, Robinhood Chain, Ethereum, Arbitrum One, BNB Chain, Elysium, Monad, Solana. Tool and execution support varies by chain; launch/Solana site flows and perps venue signing follow the live catalog and returned plan.
+<!-- canonical-chains:end -->
 
 ## Connect
 

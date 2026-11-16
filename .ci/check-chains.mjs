@@ -1,0 +1,13 @@
+import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {LIVE} from './canonical-chains.mjs';
+const bytes=await readFile(new URL('./canonical-chains.mjs',import.meta.url));
+const pin=JSON.parse(await readFile(new URL('./canonical-source.json',import.meta.url)));
+if(createHash('sha256').update(bytes).digest('hex')!==pin.sha256)throw Error('Canonical registry snapshot differs from release pin');
+const ids=LIVE.map(c=>String(c.id)).sort();
+const total=LIVE.length+1,words=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve'];
+const expected='QHooks covers '+(words[total]||total)+' chains: '+[...LIVE.map(c=>c.name),'Solana'].join(', ')+'. Tool and execution support varies by chain; launch/Solana site flows and perps venue signing follow the live catalog and returned plan.';
+const readme=await readFile(new URL('../README.md',import.meta.url),'utf8');
+const found=/<!-- canonical-chains:start -->\s*([\s\S]*?)\s*<!-- canonical-chains:end -->/.exec(readme)?.[1];
+if(found!==expected)throw Error('README chain copy differs from canonical registry');
+console.log(JSON.stringify({pass:true,evmChains:LIVE.length,totalIncludingSolana:total,sourceRelease:pin.releaseId,scope:'README chain-count and names block'}));
